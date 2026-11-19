@@ -79,6 +79,10 @@ curl -fsSL https://raw.githubusercontent.com/nizar2004/onlinefix-linux/main/inst
 ./install.sh --repo ZzEdovec/onlinefix-linux
 ```
 
+> **Примечание**
+> Этот форк пока не публикует готовых сборок. Поэтому установщику нужна либо локальная сборка из DevelNext (`--jar`), либо явный `--repo` с опубликованными релизами (например, upstream-проект выше).
+> Как только здесь появится релиз с ассетом `OFMELauncher.jar`, `./install.sh` заработает без дополнительных аргументов.
+
 #### Опции установщика
 
 | Опция | Описание |

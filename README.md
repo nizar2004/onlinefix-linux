@@ -79,6 +79,10 @@ To install an existing upstream build instead of a release of this fork:
 ./install.sh --repo ZzEdovec/onlinefix-linux
 ```
 
+> **Note**
+> This fork does not publish prebuilt binaries yet. The installer therefore needs either a local DevelNext build (`--jar`) or an explicit `--repo` that publishes release assets (for example the upstream project above).
+> Once a release with an `OFMELauncher.jar` asset is published here, `./install.sh` works without any extra arguments.
+
 #### Installer options
 
 | Option | Description |

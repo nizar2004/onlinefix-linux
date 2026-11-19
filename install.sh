@@ -213,7 +213,7 @@ find_local_jar() {
 fetch() {
     local url="$1" out="$2"
     if command -v curl >/dev/null 2>&1; then
-        curl -fL --retry 3 --connect-timeout 20 -o "$out" "$url"
+        curl -fL --retry 3 --connect-timeout 20 --progress-bar -o "$out" "$url"
     elif command -v wget >/dev/null 2>&1; then
         wget -q -O "$out" "$url"
     else
@@ -247,38 +247,45 @@ api_get() {
 }
 
 download_release() {
-    local api json url
+    local api json url direct
     if [ -n "$TAG" ]; then
         api="https://api.github.com/repos/$REPO/releases/tags/$TAG"
+        direct="https://github.com/$REPO/releases/download/$TAG/$JAR_NAME"
     else
         api="https://api.github.com/repos/$REPO/releases/latest"
+        direct="https://github.com/$REPO/releases/latest/download/$JAR_NAME"
     fi
 
     json="$(api_get "$api" 2>/dev/null || true)"
-    if [ -z "$json" ]; then
-        die "Could not read the release list of $REPO.
-Check your network, or install a local build with:
-  $0 --jar /path/to/$JAR_NAME"
+    url=""
+    if [ -n "$json" ]; then
+        url="$(printf '%s\n' "$json" \
+            | grep -o '"browser_download_url"[[:space:]]*:[[:space:]]*"[^"]*"' \
+            | sed -E 's/.*"(https:[^"]+)".*/\1/' \
+            | grep -Ei '\.jar(\?|$)' \
+            | head -n1 || true)"
     fi
 
-    url="$(printf '%s\n' "$json" \
-        | grep -o '"browser_download_url"[[:space:]]*:[[:space:]]*"[^"]*"' \
-        | sed -E 's/.*"(https:[^"]+)".*/\1/' \
-        | grep -Ei '\.jar(\?|$)' \
-        | head -n1 || true)"
+    if [ -n "$url" ]; then
+        info "Downloading $url"
+        fetch "$url" "$TMP_DIR/$JAR_NAME" || die "Download failed: $url"
+        return 0
+    fi
 
-    if [ -z "$url" ]; then
-        die "No .jar asset was found in the release of $REPO${TAG:+ (tag $TAG)}.
+    # The API may be unavailable (rate limit, offline); GitHub can serve the
+    # release asset directly when it is named OFMELauncher.jar.
+    info "Downloading $direct"
+    if fetch "$direct" "$TMP_DIR/$JAR_NAME"; then
+        return 0
+    fi
+
+    die "Could not find a launcher JAR in the releases of $REPO${TAG:+ (tag $TAG)}.
 
 Build the launcher in DevelNext first, then run:
   $0 --jar /path/to/$JAR_NAME
 
 Or install a release from another repository, for example:
   $0 --repo ZzEdovec/onlinefix-linux"
-    fi
-
-    info "Downloading $url"
-    fetch "$url" "$TMP_DIR/$JAR_NAME" || die "Download failed: $url"
 }
 
 if [ -n "$JAR_URL" ]; then
