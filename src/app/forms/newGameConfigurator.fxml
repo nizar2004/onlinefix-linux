@@ -71,7 +71,7 @@
         <Separator focusTraversable="false" id="separator" layoutX="58" layoutY="121" orientation="HORIZONTAL" prefHeight="8" prefWidth="144" styleClass="separator "/>
         <VBox alignment="CENTER" focusTraversable="false" id="vbox3" layoutX="58" layoutY="139" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="176" prefWidth="300" spacing="1" styleClass="">
           <children>
-            <VBox alignment="TOP_LEFT" focusTraversable="false" id="gamePathBox" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="58" prefWidth="300" spacing="0" style="-fx-background-radius:15 15 0 0;" styleClass="modern-input-box ">
+            <VBox alignment="TOP_LEFT" focusTraversable="false" id="gamePathBox" layoutX="0" layoutY="0" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="58" prefWidth="300" spacing="0" style="-fx-background-radius:12 12 0 0;" styleClass="modern-input-box ">
               <padding>
                 <Insets bottom="8" left="18" right="18" top="8"/>
               </padding>
@@ -120,7 +120,7 @@
                 <Data cursor="HAND" enabled="1" id="data-ftpInstallerPath" visible="1"/>
               </children>
             </VBox>
-            <VBox alignment="TOP_LEFT" focusTraversable="false" id="vbox4" layoutX="0" layoutY="118" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="58" prefWidth="300" spacing="0" style="-fx-background-radius:0 0 15 15;" styleClass="modern-input-box ">
+            <VBox alignment="TOP_LEFT" focusTraversable="false" id="vbox4" layoutX="0" layoutY="118" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="58" prefWidth="300" spacing="0" style="-fx-background-radius:0 0 12 12;" styleClass="modern-input-box ">
               <padding>
                 <Insets bottom="8" left="18" right="18" top="8"/>
               </padding>
@@ -153,7 +153,7 @@
         <Data cursor="DEFAULT" enabled="1" id="data-label" visible="1"/>
         <Data cursor="DEFAULT" enabled="1" id="data-vbox6" visible="1"/>
         <Separator focusTraversable="false" id="separatorAlt" layoutX="58" layoutY="325" orientation="HORIZONTAL" prefHeight="8" prefWidth="144" styleClass="separator "/>
-        <com.jfoenix.controls.JFXButton AnchorPane.leftAnchor="58" AnchorPane.rightAnchor="58" alignment="CENTER_LEFT" buttonType="FLAT" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="false" graphicTextGap="0" id="cleanAfterAdd" layoutX="58" layoutY="343" prefHeight="58" prefWidth="304" ripplerFill="#cccccc" style="-fx-background-color: #333337;-jfx-button-type: FLAT;-fx-background-radius:15px;" styleClass="button jfx-button " text="" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+        <com.jfoenix.controls.JFXButton AnchorPane.leftAnchor="58" AnchorPane.rightAnchor="58" alignment="CENTER_LEFT" buttonType="FLAT" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="false" graphicTextGap="0" id="cleanAfterAdd" layoutX="58" layoutY="343" prefHeight="58" prefWidth="304" ripplerFill="#cccccc" style="-fx-background-color: #242936;-jfx-button-type: FLAT;-fx-background-radius:12px;" styleClass="button jfx-button " text="" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
           <font>
             <Font name="System Regular" size="13"/>
           </font>
@@ -166,7 +166,7 @@
               </font>
             </com.jfoenix.controls.JFXButton>
             <Data cursor="HAND" enabled="1" id="data-addGame" visible="1"/>
-            <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="cancelButton" layoutX="155" layoutY="4" prefHeight="40" prefWidth="104" ripplerFill="#f2f2f2" style="-fx-background-color: #333337;" styleClass="button jfx-button " text="Отмена" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+            <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="cancelButton" layoutX="155" layoutY="4" prefHeight="40" prefWidth="104" ripplerFill="#f2f2f2" style="-fx-background-color: #242936;" styleClass="button jfx-button " text="Отмена" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
               <font>
                 <Font name="System Bold" size="12"/>
               </font>

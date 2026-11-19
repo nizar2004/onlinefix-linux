@@ -1,6 +1,7 @@
 {
     "MAINFORM.HEADER": "Добавьте игру",
-    "MAINFORM.SUBHEADER": "добавьте какую-нибудь игру",
+    "MAINFORM.SUBHEADER": "Добавьте какую-нибудь игру",
+    "MAINFORM.EMPTY.HINT": "Нажмите «Добавить игру» или Ctrl+O",
     "MAINFORM.ADDGAME": "Добавить игру",
     "MAINFORM.LOADINGGAME":"Поиск файлов",
     "MAINFORM.DONATE": "Поддержать",

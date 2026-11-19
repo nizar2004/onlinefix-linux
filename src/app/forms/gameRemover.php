@@ -43,7 +43,7 @@ class gameRemover extends AbstractForm
         } catch (Throwable $ex){}
         
         if (app()->form('MainForm')->container->content->children->isEmpty())
-            app()->form('MainForm')->noGamesHeader->show();
+            app()->form('MainForm')->noGamesBox->show();
         
         app()->form('MainForm')->hideGameMenu();
         $this->hide();

@@ -30,7 +30,7 @@
           </font>
         </TextField>
         <Data cursor="DEFAULT" enabled="1" id="data-value" visible="1"/>
-        <Button alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="saveButton" layoutX="64" layoutY="148" prefHeight="32" prefWidth="144" styleClass="button def-button " text="Сохранить" textAlignment="CENTER" underline="false" wrapText="false">
+        <Button alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="true" graphicTextGap="4" id="saveButton" layoutX="64" layoutY="148" prefHeight="32" prefWidth="144" styleClass="button jfx-button " text="Сохранить" textAlignment="CENTER" underline="false" wrapText="false">
           <font>
             <Font name="System Bold" size="12"/>
           </font>

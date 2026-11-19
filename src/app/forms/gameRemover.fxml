@@ -7,13 +7,13 @@
       </font>
     </LabelEx>
     <Data cursor="DEFAULT" enabled="1" id="data-label" visible="1"/>
-    <com.jfoenix.controls.JFXCheckBox AnchorPane.bottomAnchor="56" AnchorPane.leftAnchor="16" alignment="CENTER_LEFT" checkedColor="#0f9d58" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="removeFiles" layoutX="16" layoutY="64" prefHeight="24" prefWidth="232" styleClass="check-box jfx-check-box " text="Удалить игру с диска" textAlignment="LEFT" textFill="#f2f2f2" unCheckedColor="#5a5a5a" underline="false" wrapText="false">
+    <com.jfoenix.controls.JFXCheckBox AnchorPane.bottomAnchor="56" AnchorPane.leftAnchor="16" alignment="CENTER_LEFT" checkedColor="#f2a51a" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="removeFiles" layoutX="16" layoutY="64" prefHeight="24" prefWidth="232" styleClass="check-box jfx-check-box " text="Удалить игру с диска" textAlignment="LEFT" textFill="#f2f2f2" unCheckedColor="#4a5263" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="12"/>
       </font>
     </com.jfoenix.controls.JFXCheckBox>
     <Data cursor="DEFAULT" enabled="1" id="data-removeFiles" visible="1"/>
-    <Button AnchorPane.bottomAnchor="16" AnchorPane.rightAnchor="16" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button" layoutX="208" layoutY="96" prefHeight="32" prefWidth="144" styleClass="button def-button " text="Да" textAlignment="CENTER" underline="false" wrapText="false">
+    <Button AnchorPane.bottomAnchor="16" AnchorPane.rightAnchor="16" alignment="CENTER" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="button" layoutX="208" layoutY="96" prefHeight="32" prefWidth="144" style="-fx-background-color:#d9534f;-fx-border-color:#d9534f;" styleClass="button def-button " text="Да" textAlignment="CENTER" underline="false" wrapText="false">
       <font>
         <Font name="System Bold" size="12"/>
       </font>
@@ -25,7 +25,7 @@
       </font>
     </Button>
     <Data cursor="HAND" enabled="1" id="data-buttonAlt" visible="1"/>
-    <com.jfoenix.controls.JFXCheckBox AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="16" alignment="CENTER_LEFT" checkedColor="#0f9d58" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="removePrefix" layoutX="16" layoutY="40" prefHeight="24" prefWidth="232" styleClass="check-box jfx-check-box " text="Удалить префикс игры" textAlignment="LEFT" textFill="#f2f2f2" unCheckedColor="#5a5a5a" underline="false" wrapText="false">
+    <com.jfoenix.controls.JFXCheckBox AnchorPane.bottomAnchor="80" AnchorPane.leftAnchor="16" alignment="CENTER_LEFT" checkedColor="#f2a51a" contentDisplay="LEFT" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="removePrefix" layoutX="16" layoutY="40" prefHeight="24" prefWidth="232" styleClass="check-box jfx-check-box " text="Удалить префикс игры" textAlignment="LEFT" textFill="#f2f2f2" unCheckedColor="#4a5263" underline="false" wrapText="false">
       <font>
         <Font name="System Regular" size="12"/>
       </font>

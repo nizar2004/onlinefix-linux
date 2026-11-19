@@ -14,12 +14,12 @@
       </columns>
     </TableView>
     <Data cursor="DEFAULT" enabled="1" id="data-envTable" visible="1"/>
-    <VBox AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" alignment="BOTTOM_RIGHT" focusTraversable="false" id="vbox" layoutX="400" layoutY="288" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="112" prefWidth="72" spacing="5" styleClass="">
+    <VBox AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" alignment="BOTTOM_RIGHT" focusTraversable="false" id="vbox" layoutX="400" layoutY="288" maxHeight="-1" maxWidth="-1" minHeight="-1" minWidth="-1" prefHeight="112" prefWidth="72" spacing="8" style="-fx-background-color:#161a21cc;-fx-background-radius:14 14 0 0;">
       <padding>
-        <Insets bottom="8" left="0" right="8" top="0"/>
+        <Insets bottom="12" left="12" right="12" top="12"/>
       </padding>
       <children>
-        <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="saveButton" layoutX="16" layoutY="3" prefHeight="48" prefWidth="48" ripplerFill="#f2f2f2" style="-fx-background-color: #33333799;" styleClass="button jfx-button " text="" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
+        <com.jfoenix.controls.JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" ellipsisString="..." focusTraversable="false" graphicTextGap="4" id="saveButton" layoutX="16" layoutY="3" prefHeight="48" prefWidth="48" ripplerFill="#f2f2f2" style="-fx-background-color: #1b1f27cc;" styleClass="button jfx-button " text="" textAlignment="LEFT" textFill="#ffffff" underline="false" wrapText="false">
           <font>
             <Font name="System Regular" size="12"/>
           </font>

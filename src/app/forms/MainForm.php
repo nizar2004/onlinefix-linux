@@ -42,6 +42,48 @@ class MainForm extends AbstractForm
     }
 
     /**
+     * @event noGamesSubheader.construct
+     */
+    function doNoGamesSubheaderConstruct(UXEvent $e = null)
+    {
+        $e->sender->text = $this->_('MAINFORM.SUBHEADER');
+    }
+
+    /**
+     * @event noGamesHint.construct
+     */
+    function doNoGamesHintConstruct(UXEvent $e = null)
+    {
+        $e->sender->text = $this->_('MAINFORM.EMPTY.HINT');
+    }
+
+    /**
+     * @event emptyAddGame.construct
+     */
+    function doEmptyAddGameConstruct(UXEvent $e = null)
+    {
+        $e->sender->text = $this->_('MAINFORM.ADDGAME');
+        $e->sender->graphic = new UXImageArea(new UXImage('res://.data/img/add.png'));
+        $e->sender->graphic->size = [18,18];
+    }
+
+    /**
+     * @event emptyAddGame.action
+     */
+    function doEmptyAddGameAction(UXEvent $e = null)
+    {
+        $this->doAddGameClick();
+    }
+
+    /**
+     * @event closeGamePanel.action
+     */
+    function doCloseGamePanelAction(UXEvent $e = null)
+    {
+        $this->hideGameMenu();
+    }
+
+    /**
      * @event playButton.construct 
      */
     function doPlayButtonConstruct(UXEvent $e = null)
@@ -480,6 +522,8 @@ class MainForm extends AbstractForm
     
     function switchGameButton($status)
     {
+        $this->emptyAddGame->enabled = ($status == 'add');
+
         if ($status == 'add')
         {
             $this->addGame->graphic = $this->addGame->data('add');
@@ -534,6 +578,15 @@ class MainForm extends AbstractForm
     }
 
     /**
+     * @event keyUp-Ctrl+O
+     */
+    function doKeyUpCtrlO(UXKeyEvent $e = null)
+    {
+        if (!$this->gamePanel->visible)
+            $this->doAddGameClick();
+    }
+
+    /**
      * @event close 
      */
     function doClose(UXWindowEvent $e = null)
@@ -558,6 +611,7 @@ class MainForm extends AbstractForm
         $gamePanel->children[1]->image = new UXImage(fs::isFile($image) ? $image : 'res://.data/img/noBanner.png');
         $gamePanel->children[1]->clip = $clip;
         $gamePanel->children[3]->children[0]->graphic = $iconView;
+        $gamePanel->cursor = 'HAND';
         $gamePanel->on('click',function (UXMouseEvent $e) use ($gameName)
         {
             $this->showGameMenu($gameName,$e->sender->children[1]->image,$e->sender);
@@ -565,14 +619,14 @@ class MainForm extends AbstractForm
         
         $this->container->content->children->add($gamePanel);
         
-        if ($this->noGamesHeader->visible)
-            $this->noGamesHeader->visible = false;
+        if ($this->noGamesBox->visible)
+            $this->noGamesBox->visible = false;
     }
     
     function addStubGame()
     {
-        if ($this->noGamesHeader->visible)
-            $this->noGamesHeader->visible = false;
+        if ($this->noGamesBox->visible)
+            $this->noGamesBox->visible = false;
             
         $box = $this->instance('prototypes.gameStubBox');
         MainForm::addBasicEffects($box);
@@ -587,7 +641,7 @@ class MainForm extends AbstractForm
         $box->free();
         
         if ($this->container->content->children->isEmpty())
-            $this->noGamesHeader->visible = true;
+            $this->noGamesBox->visible = true;
     }
     
     function showGameMenu($name,$header,$sender)
@@ -606,6 +660,8 @@ class MainForm extends AbstractForm
         $this->addGame->hide();
         
         $this->gameHeader->image = $header;
+        $this->gameTitle->text = $name;
+        $this->gameTitle->tooltipText = $name;
         $this->gamePanel->data('gameName',$name); 
         $this->gamePanel->data('opener',$sender);  
         $this->protonDBButton->enabled = $this->steamButton->enabled = $this->steamDBButton->enabled = $this->appModule()->games->get('steamID',$name) != null;
@@ -656,7 +712,7 @@ class MainForm extends AbstractForm
     
     function runGame($gameName,$debug = false)
     {
-        new Thread(function () use ($process,$gameName,$debug)
+        new Thread(function () use ($gameName,$debug)
         {
             $process = FilesWorker::generateProcess($gameName,$debug);
             if ($process == null)
